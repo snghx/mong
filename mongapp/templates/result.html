@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>사상의학 체질 테스트 결과 페이지</h2>
+
+{% if '태양인' in whole %}
+    <a href="{% url 'result_ty' %}">태양인 자세히 보기</a>
+{% endif %}
+{% if '태음인' in whole %}
+    <a href="{% url 'result_te' %}">태음인 자세히 보기</a>
+{% endif %}
+{% if '소양인' in whole %}
+    <a href="{% url 'result_sy' %}">소양인 자세히 보기</a>
+{% endif %}
+{% if '소음인' in whole %}
+    <a href="{% url 'result_se' %}">소음인 자세히 보기</a>
+{% endif %}
+
+{% endblock %}

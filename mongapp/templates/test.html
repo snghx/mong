@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/test.css' %}">
+<style>
+    #question {
+        text-align: center;
+        font-size: 15pt;
+        font-weight: bold;
+    }
+
+    #btn {
+        background-color: #FFF4C0;
+        border: none;
+    }
+    
+</style>
+<title>사상의학 테스트 페이지</title>
+
+<div class ="test_info">
+</div>
+<form action="{% url 'result' %}", method="POST">
+    {% csrf_token %}
+    <div id="question"> <!--질문 부분은 추후 이미지로 대체,,,-->
+        <div>
+            <br><br>
+            <img src="{% static 'namegro.png' %}"><br><br><br>
+
+            <img src="{% static 'q1-1.png' %}"><br>
+            <input type ="checkbox" name="체형[]" value="태양인" {% if 체형.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" name="체형[]" {% if 체형.published %}checked{% endif %}>NO
+        </div>
+        <br><br>
+        <div>
+            <img src="{% static 'q1-2.png' %}"><br>
+            <input type ="checkbox" name="체형[]" value="태양인" {% if 체형.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" name="체형[]"  {% if 체형.published %}checked{% endif %}>NO
+        </div>
+        <br><br>  
+        <div>
+            <img src="{% static 'q1-3.png' %}"><br>
+            <input type ="checkbox" name="체형[]" value="태음인" {% if 체형.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" name="체형[]"  {% if 체형.published %}checked{% endif %}>NO
+        </div>  
+        <br><br>
+        <div>
+            <img src="{% static 'q1-4.png' %}"><br>
+            <input type ="checkbox" name="체형[]" value="태음인" {% if 체형.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" name="체형[]"  {% if 체형.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q1-5.png' %}"><br>
+            <input type ="checkbox" name="체형[]" value="소양인" {% if 체형.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" name="체형[]"  {% if 체형.published %}checked{% endif %}>NO
+        </div>
+        <br><br>
+        <div>
+            <img src="{% static 'q1-6-2.png' %}"><br>
+            <input type ="checkbox" name="체형[]" value="소양인" {% if 체형.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" name="체형[]"  {% if 체형.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q1-7-2.png' %}"><br>
+            <input type ="checkbox" name="체형[]" value="소음인" {% if 체형.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" name="체형[]"  {% if 체형.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q1-8.png' %}"><br>
+            <input type ="checkbox" name="체형[]" value="소음인" {% if 체형.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" name="체형[]"  {% if 체형.published %}checked{% endif %}>NO
+        </div>
+        
+    </div>
+    <div id="question">
+        <br><br>
+        <img src="{% static 'namegro2.png' %}"><br><br><br>
+        
+        <div>
+            <img src="{% static 'q2-1.png' %}"><br>
+            <input type ="checkbox" name="소질[]" value="태양인" {% if 소질.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 소질.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q2-2.png' %}"><br>
+            <input type ="checkbox" name="소질[]" value="태양인" {% if 소질.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 소질.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q2-3.png' %}"><br>
+            <input type ="checkbox" name="소질[]" value="태음인" {% if 소질.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 소질.published %}checked{% endif %}>NO
+        </div>
+    
+        <br><br>
+        <div>
+            <img src="{% static 'q2-4.png' %}"><br>
+            <input type ="checkbox" name="소질[]" value="태음인" {% if 소질.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 소질.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q2-5.png' %}"><br>
+            <input type ="checkbox" name="소질[]" value="태음인" {% if 소질.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 소질.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q2-6.png' %}"><br>
+            <input type ="checkbox" name="소질[]" value="소양인" {% if 소질.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 소질.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q2-7.png' %}"><br>
+            <input type ="checkbox" name="소질[]" value="소양인" {% if 소질.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 소질.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q2-8.png' %}"><br>
+            <input type ="checkbox" name="소질[]" value="소음인" {% if 소질.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 소질.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q2-9.png' %}"><br>
+            <input type ="checkbox" name="소질[]" value="소음인" {% if 소질.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 소질.published %}checked{% endif %}>NO
+        </div>
+        
+    </div>
+    <div id="question">
+        <br><br>
+        <img src="{% static 'namegro3.png' %}"><br><br><br>
+
+        <div>
+            <img src="{% static 'q3-1.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="태양인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q3-2.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="태양인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q3-3-2.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="태양인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q3-4.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="태음인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q3-5.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="태음인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q3-6.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="소양인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q3-7.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="소양인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q3-8.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="소양인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q3-9.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="소음인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q3-10.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="소음인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        
+        <br><br>
+        <div>
+            <img src="{% static 'q3-11.png' %}"><br>
+            <input type ="checkbox" name="성격[]" value="소음인" {% if 성격.published %}checked{% endif %}>YES
+            &nbsp&nbsp&nbsp&nbsp<input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        </div>
+        <br>
+        <button type="submit" id="btn"><img src="{% static 'rsbtnn.png' %}" width="40%"></button><br><br>
+    </div>
+    
+</form>
+{% endblock %}

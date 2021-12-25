@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for user in cons.all %}
+
+
+<h1>{{ user.nationality }}님 체질몽이 회원가입이 완료되었습니다!</h1>
+{% endfor %}
+
+
+{% endblock %}

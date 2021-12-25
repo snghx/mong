@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <script>
+        $.ajaxSetup({
+          headers: { "X-CSRFToken": '{{csrf_token}}' }
+        });
+    </script>
+    <style>
+        body {
+            background-color: #FFF2CC;
+            margin: 0;
+        }
+        #home {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #FFF2CC;
+            margin: 0;
+        }
+        #top {
+            position: relative;
+            width: 100%;
+            top: 7.5%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            background: rgba(255, 223, 166, 0.7)
+        }
+        div a {margin-left: 7.5%; text-decoration:none;}
+        #btnn{
+        position: relative;
+        border-top-left-radius : 30px;
+        border-bottom-left-radius : 30px;
+        border-top-right-radius : 30px;
+        border-bottom-right-radius : 30px;
+        width : 7%;
+        height : 10%;
+        border : none;
+        background: #FFC152;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: KoPubDotum;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 70%;
+        line-height: 7%;
+        text-align: center;
+        color: #684500;
+        margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="top">
+        <img src="{% static 'name.png' %}" width="13%" style="margin-left: 4%;">
+        
+        <a href="{% url 'home' %}"><img src="{% static 'housee.png' %}" width="3%"></a>
+        <a href="{% url 'information' %}"><img src="{% static 'info.png' %}"width="4%"></a>
+        {% if login_session %}
+        <a href="{% url 'manage' %}"><img src="{% static 'mm.png' %}"width="5%"></a>
+        {% else %}
+        <a href="{% url 'accounts:login' %}" onclick="return alert('로그인을 하셔야 이용이 가능합니다.')"><img src="{% static 'mm.png' %}"width="5%"></a>
+        {% endif %}
+        {% if login_session %}
+        <a href="{% url 'record' %}"><img src="{% static 'record.png' %}"width="4%"></a>
+        {% else %}
+        <a href="{% url 'accounts:login' %}" onclick="return alert('로그인을 하셔야 이용이 가능합니다.')"><img src="{% static 'record.png' %}"width="4%"></a>
+        {% endif %}
+        {% if login_session %}
+        <a href="{% url 'myshop' %}"><img src="{% static 'shop.png' %}"width="5.3%"></a>
+        {% else %}
+        <a href="{% url 'accounts:login' %}" onclick="return alert('로그인을 하셔야 이용이 가능합니다.')"><img src="{% static 'shop.png' %}"width="5.3%"></a>
+        {% endif %}
+        {% if login_session %}
+        <a href ="{% url 'accounts:logout' %}"><img src="{% static 'lologout.png' %}"width="9%"></a>
+        {% else %}
+        <a href="{% url 'accounts:login' %}"><img src="{% static 'lologin.png' %}"width="9%"></a>
+        {% endif %}
+    </div>
+    {% block content %}
+
+    {% endblock %}
+</body>
+

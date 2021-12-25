@@ -1,0 +1,9 @@
+body{
+    background : #FFF4C0 !important
+}
+.test_info{
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    float:left;
+    margin-left: 10%;
+}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<title>mong::체질몽이 탄생 중</title>
+<style>
+    body{
+        background: #F3CB9C !important
+    }
+    div{
+        text-align: center;
+    }
+</style>
+<div>
+    <img src="{% static 'type.png' %}" style="position:relative;" width="33%">
+
+</div>
+<a href="{% url 'birth_sy' %}"><img src="{% static 'rsbtn.png' %}" style="position:relative; top: 5%; left: 41.5%;" width="18%"></a>
+    
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    a {
+        margin-left: 3%;
+    }
+    body{
+        background-color: #FFF9EB !important;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'mongapp/css/base.css' %}">
+<br><br>
+<a href="{% url 'info_ty' %}"><img src="{% static 'groty.png' %}" width="20%"></a>
+<a href="{% url 'info_te' %}"><img src="{% static 'grote.png' %}" width="21.35%"></a>
+<a href="{% url 'info_sy' %}"><img src="{% static 'grosy.png' %}" width="20.1%"></a>
+<a href="{% url 'info_se' %}"><img src="{% static 'grose.png' %}" width="22.8%"></a>
+<br><br><br>
+{% endblock %}

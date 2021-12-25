@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    #item{
+        position:relative;
+        left:15%;
+        top: 30%;
+        width:70%;
+        margin-bottom: 20px;
+    }
+    footer{
+        padding:30px;
+    }
+    #egg{
+        position: relative;
+        left: 15%;
+    }
+    body{
+        background-color: #FFF9EB !important;
+    }
+</style>
+<br><br>
+<img id="egg" src="{% static 'eggpoint.png' %}" width="10%">
+<br><br>
+<img id = "item" src="{% static 'shop_item.png'%}">
+<footer></footer>
+
+
+{% endblock %}

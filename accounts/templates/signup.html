@@ -1,0 +1,61 @@
+{% load static %}
+<style>
+    .errorlist {list-style: none; color:red; padding-left: 2px; padding-top:15px;}
+    #box {
+      position: absolute;
+      left: 50%;
+      right: 5.28%;
+      top: 15%;
+      bottom: 10%;
+
+      background: #FFE8A2;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    }
+    body {
+      background: #FFF2CC;
+      font-family: KoPubDotum;
+      font-weight: bold;
+    }
+    footer{width:114.11%; position: relative; left: -80px;}
+    .btn{
+        position: relative;
+        border-radius: 30px;
+        width : 18%;
+        height : 8%;
+        border : none;
+        background: #FFCF79;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: KoPubDotum;
+        font-style: normal;
+        font-size: 2.5vh;
+        line-height: 22px;
+        text-align: center;
+        color: #684500;
+    }
+    .btnbox{
+      margin: auto;
+    }
+</style>
+<body>
+    <a href="{% url 'home' %}"><img src="{% static 'main_mong.png' %}" width="18%" style="position:relative;left:20%;top:30%"></a>
+  <div id="box">
+    <h1 style="margin-left: 20%; margin-right: 20%; margin-top: 6%; background: #FFCF79; color: #5C3200; font-size: 20pt; text-align: center;">SIGN UP</h1>
+    <form method="POST" action="" style="text-align: center;">
+        {% csrf_token %}
+        {% for form in forms %}<br>
+        <div>
+            <label for="{{ form.id_for_label }}">{{ form.label }}</label>
+            {{ form }}
+        </div>
+    {% endfor %}
+
+    {% if error %}
+    {{ error }}
+    {% endif %}<br>
+    <div class = "btnbox">
+      <button type="submit" class = "btn">SIGN UP</button>
+    </div>
+  </div>
+  
+  </form>
+</body>

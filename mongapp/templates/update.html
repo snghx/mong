@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<title>mong::운동기록 수정</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/record.css' %}">
+<style>
+    .imgbox{
+        text-align: center;
+    }
+    input#btn{
+        background: url('/static/edit_btn.png');
+        background-position:  0px 3px;
+        background-repeat: no-repeat;
+        background-size: 130px;
+        outline: 0;
+        height:50px;
+        border-style: none;
+    }
+    hr{
+        border: 0;
+        height: 2px;
+        background:#915417;
+    }
+    body{
+        background-color: #FFF9EB !important;
+    }
+</style>
+<form method="post">
+    <div class="formbox">
+        <div class = "imgbox">
+            <img src="{% static 'record_char.png' %}" width="30%">
+            <br><hr>
+        </div>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <div class="btnbox">
+            <input id="btn" type="submit" value="                                ">
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    body{
+        background-color: #FFF9EB !important;
+    }
+</style>
+
+{% for user in cons.all %}
+{% if user.user_id == login_session %}
+<br><br><br>
+
+{% if user.nationality == 'TY' %}
+    {% for hours in time.all %}
+        {% if hours.user.user_id == login_session %}
+            {% if hours.walk in zero %}
+                <img src="{% static 'gymeggty.png' %}" width="100%">
+            {% elif hours.walk in five %}
+                <img src="{% static 'gymkidty.png' %}" width="100%">
+            {% elif hours.walk == '10000' %}
+                <img src="{% static 'gymadultty.png' %}" width="100%">
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if user.nationality == 'TE' %}
+    {% for hours in time.all %}
+        {% if hours.user.user_id == login_session %}
+            {% if hours.walk in zero %}
+                <img src="{% static 'gymeggte.png' %}" width="100%">
+            {% elif hours.walk in five %}
+                <img src="{% static 'gymkidte.png' %}" width="100%">
+            {% elif hours.walk == '10000' %}
+                <img src="{% static 'gymadultte.png' %}" width="100%">
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if user.nationality == 'SY' %}
+    {% for hours in time.all %}
+        {% if hours.user.user_id == login_session %}
+            {% if hours.walk in zero %}
+                <img src="{% static 'gymeggsy.png' %}" width="100%">
+            {% elif hours.walk in five %}
+                <img src="{% static 'gymkidsy.png' %}" width="100%">
+            {% elif hours.walk == '10000' %}
+                <img src="{% static 'gymadultsy.png' %}" width="100%">
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if user.nationality == 'SE' %}
+    {% for hours in time.all %}
+        {% if hours.user.user_id == login_session %}
+            {% if hours.walk in zero %}
+                <img src="{% static 'gymeggse.png' %}" width="100%">
+            {% elif hours.walk in five %}
+                <img src="{% static 'gymkidse.png' %}" width="100%">
+            {% elif hours.walk == '10000' %}
+                <img src="{% static 'gymadultse.png' %}" width="100%">
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% endif %}
+{% endfor %}
+{% endblock %}

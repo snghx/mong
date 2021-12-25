@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/test.css' %}">
+<title>사상의학 테스트 페이지</title>
+
+<div class ="test_info">
+    <h3>성격 평가<h3>
+    <p>사상의학은 체형과 소질, 성격의 세 가지 요소로 구성됩니다.</p>
+</div>
+<form action="{% url 'result' %}", method="POST">
+    {% csrf_token %}
+    <div class="question">
+        <h3>Q1</h3>
+        <p>머리가 크고 이마가 넓은 편인가요?</p>
+        <input type ="checkbox" name="성격[]" value="태양인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+    
+        <h3>Q2</h3>
+        <p>눈이 부리부리하고 강한 인상인가요?</p>
+        <input type ="checkbox" name="성격[]" value="태양인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+    
+        <h3>Q3</h3>
+        <p>이목구비가 진하고 목소리가 우렁찬 편인가요?</p>
+        <input type ="checkbox" name="성격[]" value="태양인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+    
+        <h3>Q4</h3>
+        <p>어깨가 발달하여 상체는 큰 편, 하체는 작은 편인가요?</p>
+        <input type ="checkbox" name="성격[]" value="태음인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+    
+        <h3>Q5</h3>
+        <p>상체에 비해 하체가 발달된 편인가요?</p>
+        <input type ="checkbox" name="성격[]" value="태음인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+    
+        <h3>Q6</h3>
+        <p>외관적을는 피부가 얇고, 땀이 거의 없는 편인가요?</p>
+        <input type ="checkbox" name="성격[]" value="소양인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+    
+        <h3>Q7</h3>
+        <p>갸름한 얼굴형에 진하지 않은 이목구비를 가졌나요?</p>
+        <input type ="checkbox" name="성격[]" value="소양인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+    
+        <h3>Q8</h3>
+        <p>어깨가 발달하여 상체는 큰 편, 하체는 작은 편인가요?</p>
+        <input type ="checkbox" name="성격[]" value="소양인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+
+        <h3>Q9</h3>
+        <p>어깨가 발달하여 상체는 큰 편, 하체는 작은 편인가요?</p>
+        <input type ="checkbox" name="성격[]" value="소음인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+
+        <h3>Q10</h3>
+        <p>어깨가 발달하여 상체는 큰 편, 하체는 작은 편인가요?</p>
+        <input type ="checkbox" name="성격[]" value="소음인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+
+        <h3>Q11</h3>
+        <p>어깨가 발달하여 상체는 큰 편, 하체는 작은 편인가요?</p>
+        <input type ="checkbox" name="성격[]" value="소음인" {% if 성격.published %}checked{% endif %}>YES
+        <input type ="checkbox" {% if 성격.published %}checked{% endif %}>NO
+        <button type="submit">전달 얍,,</button>
+    </div>
+</form>
+
+<h5><a href="{% url 'result' %}">결과확인</a></h5>
+<h5><a href="{% url 'mongs' %}">다른 체질몽들 정보 보러가기</a></h5>
+
+{% endblock %}

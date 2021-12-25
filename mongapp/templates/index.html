@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% if post_list %}
+<title>mong::운동 기록</title>
+
+<body>
+    <div class = "box">
+        {% for post in post_list.all %}
+        <div class = "imgbox">
+            <img src="{% static 'record_char.png' %}" width="30%">
+            <br><hr><br>
+            </div>
+            <div class ="text">
+                걸음 수 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ post.walk }} 걸음 이상 <br>
+                운동 시간 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{post.hour}}시간 {{post.min}}시간<br>
+                섭취 칼로리&nbsp;&nbsp;&nbsp;&nbsp;{{post.cal}} Kcal<br><br>
+                <div class="time">{{post.pub_date}}에 작성됨</div>
+            </div>
+            <br><br>
+            <div class = "btnbox">
+            <button class = "btn" type ="button"><a href="{% url 'update' post.id %}" style="text-decoration-line:none; color:#684500;">수정</a></button>
+            <button class = "btn" type ="button"><a href="{% url 'delete' post.id %}" style="text-decoration-line:none; color:#684500;">삭제</a></button>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div style="background-color: #FFF9EB;">
+        <br><br>
+        <img src="{% static 'nomong.png' %}" width="30%" style="position: relative; top: 30%; left: 30%;">
+        <br><br>
+        <a href="{% url 'create' %}"><img src="{% static 'record_create_btn.png' %}" width="15%" style="position:relative; left:35.5%;"></a>
+        <footer></footer>
+    </div>
+    
+    
+</body>
+
+{% endif %}
+{% endblock %}
