@@ -1,1 +1,0 @@
-web: gunicorn mongproject.wsgi --log-file -
