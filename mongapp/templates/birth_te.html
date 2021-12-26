@@ -57,7 +57,7 @@
 <div>
 <img src="{% static 'te2.png' %}"style="position:relative;" width="33%">
 </div>
-<a href="{% url 'result_se' %}"><img src="{% static 'mongbtn.png' %}" style="position: relative; top: 5%; left: 33%;" width="15%"></a>
+<a href="{% url 'accounts:login' %}" onclick="return alert('로그인/회원가입을 하셔야 이용이 가능합니다.')"><img src="{% static 'mongbtn.png' %}" style="position: relative; top: 5%; left: 33%;" width="15%"></a>
 <a href="{% url 'test' %}"><img src="{% static 'retest.png' %}" style="position: relative; top: 5%; left: 38%;" width="15%"></a>
 <footer></footer>
 {% endblock %}

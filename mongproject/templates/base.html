@@ -73,9 +73,9 @@
         <a href="{% url 'accounts:login' %}" onclick="return alert('로그인을 하셔야 이용이 가능합니다.')"><img src="{% static 'shop.png' %}"width="5.3%"></a>
         {% endif %}
         {% if login_session %}
-        <a href ="{% url 'accounts:logout' %}"><img src="{% static 'lologout.png' %}"width="9%"></a>
+        <a href ="{% url 'accounts:logout' %}"><img src="{% static 'logout.png' %}"width="9%"></a>
         {% else %}
-        <a href="{% url 'accounts:login' %}"><img src="{% static 'lologin.png' %}"width="9%"></a>
+        <a href="{% url 'accounts:login' %}"><img src="{% static 'login.png' %}"width="9%"></a>
         {% endif %}
     </div>
     {% block content %}

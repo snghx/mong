@@ -35,6 +35,10 @@
     .btnbox{
       margin: auto;
     }
+    #bt {
+      background-color: #FFE8A2;
+      border: none;
+    }
 </style>
 <body>
     <a href="{% url 'home' %}"><img src="{% static 'main_mong.png' %}" width="18%" style="position:relative;left:20%;top:30%"></a>
@@ -52,9 +56,10 @@
     {% if error %}
     {{ error }}
     {% endif %}<br>
-    <div class = "btnbox">
+    <button type="submit" id="bt"><img src="{% static 'sisignup.png' %}" width="50%"></button>
+    <!-- <div class = "btnbox">
       <button type="submit" class = "btn">SIGN UP</button>
-    </div>
+    </div> -->
   </div>
   
   </form>
