@@ -1,0 +1,39 @@
+body{
+    background-color: #FFF9EB !important;
+    font-family: 'Nunito', sans-serif;
+}
+.main_calendar{
+    position:relative;
+    top:40px;
+    width:100%;
+
+    font-size:30px;
+    border-radius: 30px;
+    padding:30px;
+    padding-right: 50px;
+    padding-left:50px;
+    background:#FAECCA;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+}
+.calendar_cell_today{
+    background-color: #FFC976;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding:5px;
+    padding-left:0px;
+    padding-right:10px;
+    padding-top:0px;
+    margin-left: -5px;
+}
+.week_sun{
+    color:#eb5e3b;
+}
+.week_sat{
+    color: rgb(56, 115, 243);
+}
+#tab{
+    background-color:#F8F4F4;
+}
+.calendar_weekday >td {
+    background-color: #DFDFDF;
+}

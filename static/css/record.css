@@ -1,0 +1,36 @@
+.formbox {
+    position: absolute;
+    right: 38%;
+    top: 160px;
+    border-radius: 30px;
+    float: right;
+    padding: 30px;
+
+    background: #FFE8A2;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.btnbox {
+    text-align: center;
+}
+
+.btn {
+    position: relative;
+    border-radius: 30px;
+    width: 40%;
+    padding: 5px;
+    border: none;
+    background: #FFCF79;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: KoPubDotum;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 22px;
+    text-align: center;
+    color: #684500;
+}
+
+.blank {
+    position: absolute;
+    top: 600px;
+}

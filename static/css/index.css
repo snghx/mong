@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'bodyfont';
+    src:url('/static/KoPubDotumMedium.ttf');
+}
+    .box{
+        position: absolute;
+        right: 38%;
+        top: 160px;
+        width:20%;
+        border-radius: 30px;
+        float: right;
+        padding: 30px;
+
+        background: #FFE8A2 !important;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    }
+    .btn{
+        position: relative;
+        border-radius: 30px;
+        width : 40%;
+        border : none;
+        background: #FFCF79;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: KoPubDotum;
+        font-style: normal;
+        font-size: 12px;
+        line-height: 22px;
+        text-align: center;
+        color: #684500;
+        text-align: center;
+        padding:8px;
+        padding-right:11px;
+    }
+    .btnbox{
+        text-align: center;
+    }
+    .time{
+        font-size:12px;
+        color:gray;
+    }
+    .createbox{
+        position: absolute;
+        margin-top:300px !important;
+        background-color: black;
+    }
+    p{
+        font-family: bodyfont;
+    }
+    footer{
+        padding:30px;
+        background-color: #FFF9EB !important;
+    }
+    body{
+        background-color: #FFF9EB !important;
+    }
+    .imgbox{
+        text-align: center;
+    }
+    hr{
+        border: 0;
+        height: 2px;
+        background:#915417;
+    }
+    .text{
+        padding-left: 20px;
+    }
